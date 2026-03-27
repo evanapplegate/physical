@@ -1,0 +1,118 @@
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: #F6F5F4;
+  background-image: url('onepage.gif');
+  background-repeat: repeat;
+  background-size: 400px auto;
+  font-family: Optima, -apple-system, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+header {
+  text-align: left;
+  padding: 2rem 1rem 1.5rem;
+}
+
+header h1 {
+  color: #7D7C7B;
+  font-weight: normal;
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
+header h1 a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 0.5px;
+  text-underline-offset: 3px;
+}
+
+header h1 a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+.chop {
+  height: 1em;
+  vertical-align: middle;
+  filter: brightness(0) invert(1) brightness(0.49);
+}
+
+.tabs {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0 1rem 1rem;
+}
+
+.tabs button {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #7D7C7B;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+.tabs button.active {
+  opacity: 1;
+  text-decoration: underline;
+  text-decoration-thickness: 0.5px;
+  text-underline-offset: 3px;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.gallery {
+  column-count: 5;
+  column-gap: 6px;
+  padding: 3px 5px;
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: 5px;
+}
+
+.gallery-item a {
+  display: block;
+  cursor: zoom-in;
+}
+
+.gallery-item img,
+.gallery-item video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 2px;
+  transition: filter .2s;
+}
+
+.gallery-item:hover img,
+.gallery-item:hover video {
+  filter: brightness(.8);
+}
+
+@media (max-width: 767px) {
+  .gallery {
+    column-count: 2;
+  }
+}
