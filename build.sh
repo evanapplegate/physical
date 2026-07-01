@@ -6,7 +6,7 @@ set -e
 
 SRC="pics"
 DEST="pics/thumbs"
-MAX=400
+MAX=800
 QUALITY=80
 
 mkdir -p "$DEST"
