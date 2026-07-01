@@ -6,7 +6,7 @@ set -e
 
 SRC="pics"
 DEST="pics/thumbs"
-MAX=1200
+MAX=400
 
 mkdir -p "$DEST"
 
@@ -22,10 +22,10 @@ for file in "$SRC"/*; do
   h=$(sips -g pixelHeight "$file" | tail -1 | awk '{print $2}')
 
   if [ "$w" -gt "$MAX" ] || [ "$h" -gt "$MAX" ]; then
-    sips --resampleHeightWidthMax "$MAX" -s format jpeg -s formatOptions 80 "$file" --out "$DEST/$outname" 2>/dev/null
+    sips --resampleHeightWidthMax "$MAX" -s format jpeg -s formatOptions 65 "$file" --out "$DEST/$outname" 2>/dev/null
     echo "Resized: $basename → $outname (${w}x${h} → max ${MAX})"
   else
-    sips -s format jpeg -s formatOptions 80 "$file" --out "$DEST/$outname" 2>/dev/null
+    sips -s format jpeg -s formatOptions 65 "$file" --out "$DEST/$outname" 2>/dev/null
     echo "Copied:  $basename → $outname (${w}x${h}, already fits)"
   fi
 done
